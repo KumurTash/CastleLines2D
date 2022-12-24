@@ -18,7 +18,7 @@ TCastlePolygon2D - потенциально невыпуклый многоуг�
 
 **Средняя кнопка мыши** - вызвать окно для редактирования точки.
 
-![Edit Mode On](docs/EditModeOn.gif)
+![Edit Mode On](img/EditModeOn.gif)
 
 
 Инструкция по подключению компонентов:
@@ -48,13 +48,13 @@ TCastlePolygon2D - потенциально невыпуклый многоуг�
 Документация
 ------------
 
-Подробную документацию смотрите на [https://kumurtash.githab.io/castlelines2d-docs/](https://kumurtash.githab.io/castlelines2d-docs/)
+Подробную документацию смотрите на [https://kumurtash.githab.io/castlelines2d-docs/index.html](https://kumurtash.githab.io/castlelines2d-docs/index.html)
 
 Примеры
 -------
 
 Примеры использования компонентов смотрите в _/CastleLines2D/examples_
 
-![preview1](docs/preview1.png) ![preview2](docs/preview2.png) ![preview3](docs/preview3.png)
+![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png)
 
 * * *

@@ -18,7 +18,7 @@ To enter the editing mode, use the drop-down menus in the object hierarchy windo
 
 **Middle mouse button** - open a window for editing a point.
 
-![Edit Mode On](docs/EditModeOn.gif)
+![Edit Mode On](img/EditModeOn.gif)
 
 Detailed usage instructions:
 ----------------------------
@@ -46,13 +46,13 @@ Detailed usage instructions:
 Documentation
 ------------
 
-For detailed documentation, see [https://kumurtash.githab.io/castlelines2d-docs/](https://kumurtash.githab.io/castlelines2d-docs/)
+For detailed documentation, see [https://kumurtash.githab.io/castlelines2d-docs/index.html](https://kumurtash.githab.io/castlelines2d-docs/index.html)
 
 Examples
 --------
 
 For examples, see _/CastleLines2D/examples_
 
-![preview1](docs/preview1.png) ![preview2](docs/preview2.png) ![preview3](docs/preview3.png)
+![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png)
 
 * * *
