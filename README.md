@@ -46,7 +46,7 @@ Detailed usage instructions:
 Documentation
 ------------
 
-For detailed documentation, see [https://kumurtash.githab.io/castlelines2d-docs/index.html](https://kumurtash.githab.io/castlelines2d-docs/index.html)
+For detailed documentation, see [https://kumurtash.github.io/CastleLines2D-docs/index.html](https://kumurtash.github.io/CastleLines2D-docs/index.html)
 
 Examples
 --------

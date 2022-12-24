@@ -48,7 +48,7 @@ TCastlePolygon2D - потенциально невыпуклый многоуг�
 Документация
 ------------
 
-Подробную документацию смотрите на [https://kumurtash.githab.io/castlelines2d-docs/index.html](https://kumurtash.githab.io/castlelines2d-docs/index.html)
+Подробную документацию смотрите на [https://kumurtash.github.io/CastleLines2D-docs/index.html](https://kumurtash.github.io/CastleLines2D-docs/index.html)
 
 Примеры
 -------
