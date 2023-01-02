@@ -215,7 +215,7 @@ begin
           AddTriangle(Triangles,A,B,C);
         end;
        end else begin
-        if FJoinMode=jmRound then AddHalfCircle(Triangles,Rects[pi1*6+2],Rects[pi1*6+3],FJoinRoundPrecision,Rects[pi1*6+0]);
+        //if FJoinMode=jmRound then AddHalfCircle(Triangles,Rects[pi1*6+2],Rects[pi1*6+3],FJoinRoundPrecision,Rects[pi1*6+0]);
        end;
    end;
 
