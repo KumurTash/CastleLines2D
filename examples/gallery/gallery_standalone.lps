@@ -6,6 +6,8 @@
       <Unit0>
         <Filename Value="gallery_standalone.dpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="5"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -47,7 +49,6 @@
       <Unit6>
         <Filename Value="../../src/castlepolygon2d.pas"/>
         <UnitName Value="CastlePolygon2D"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="115"/>
         <CursorPos X="23" Y="140"/>

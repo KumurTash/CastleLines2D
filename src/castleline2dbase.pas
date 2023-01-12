@@ -59,6 +59,11 @@ type
     procedure SavePointsToFile(const FileName:string);
     {*Загрузить точки @link(TCastleLine2DBase.Points Points) из файла}
     procedure LoadPointsFromFile(const FileName:string);
+    {*
+       Проверка на самопересечение.
+    }
+    function SelfIntersections:boolean;
+
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     {Разделы свойств}
@@ -123,9 +128,6 @@ procedure TCastleLine2DBase.SetLineType(NewLineType:TCastleLineType);
 begin
  if FLineType=NewLineType then Exit;
  FLineType:=NewLineType;
- {$ifdef CASTLE_DESIGN_MODE}
-  Line2DGizmos.ReLoad;
- {$endif}
 end;
 
 
@@ -134,12 +136,18 @@ procedure TCastleLine2DBase.CheckLineType;
 begin
  if FPoints.Count<3 then Exit;
  if FLineType=ltOpen then Exit;
- if (FPoints.Count=3)and(FPoints[0]-FPoints[2]).IsZero then begin
+ if (FPoints.Count=3)and TVector2.Equals(FPoints[0],FPoints[2]) then begin
   FPoints.Delete(2);
+  {$ifdef CASTLE_DESIGN_MODE}
+   Line2DGizmos.ReLoad;
+  {$endif}
   Exit;
  end;
- if (FPoints.Count>3)and((FPoints[0]-FPoints[FPoints.Count-1]).IsZero=false) then begin
+ if (FPoints.Count>3)and(TVector2.Equals(FPoints[0],FPoints[FPoints.Count-1])=false) then begin
   FPoints[0]:=FPoints[FPoints.Count-1];
+  {$ifdef CASTLE_DESIGN_MODE}
+   Line2DGizmos.ReLoad;
+  {$endif}
   Exit;
  end;
 end;
@@ -155,8 +163,8 @@ begin
   for i:=0 to FPoints.Count-1 do begin
     Writeln(F,FPoints[i].X.ToString+';'+FPoints[i].Y.ToString);
   end;
-  Close(F);
  finally
+   Close(F);
  end;
 end;
 
@@ -196,6 +204,24 @@ begin
     parser.Free;
   end;
 
+end;
+
+function TCastleLine2DBase.SelfIntersections:boolean;
+var i,j:integer;
+    Cross:TVector2;
+begin
+  // проверка на самопересечение
+  // на пересечение надо надо проверять не каждый отрезок, а через один
+  Result:=false;
+  for i:=0 to Points.Count-3 do begin
+   for j:=i+2 to Points.Count-3 do begin
+     if CrossingSegments(Points[i],Points[i+1],Points[j],Points[j+1],Cross)=1 then Exit(true);
+   end;
+  end;
+  // проверка последнего отрезка
+  for j:=1 to Points.Count-4 do begin
+    if CrossingSegments(Points[Points.Count-2],Points[Points.Count-1],Points[j],Points[j+1],Cross)=1 then Exit(true);
+  end;
 end;
 
 

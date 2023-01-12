@@ -55,6 +55,21 @@ TCastlePolygon2D - потенциально невыпуклый многоуг�
 
 Примеры использования компонентов смотрите в _/CastleLines2D/examples_
 
-![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png)
+![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png) ![preview4](img/preview4.png)
+
+Журнал изменений
+----------------
+**12.01.2023**
+
+Добавлены различные способы наложения текстуры на TCastleLine2D, TCastlePolygon2D.
+
+Клавиша Shift теперь помогает рисовать ровные линии.
+
+В CastlePolygon2D добавлено свойство Area - площадь многоугольника
+
+Исправлены баги.
+
+[Подробнее] (https://kumurtash.github.io/CastleLines2D-docs/ru/index.html#change)
+
 
 * * *

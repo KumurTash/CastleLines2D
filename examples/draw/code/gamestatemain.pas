@@ -40,6 +40,7 @@ type
     Viewport1: TCastleViewport;
     BtnClear :TCastleButton;
     BtnChangeColor :TCastleButton;
+    Checkbox:TCastleCheckbox;
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -106,12 +107,17 @@ begin
     n:=Length(Lines);
     SetLength(Lines,n+1);
     Lines[n]:=TCastleLine2D.Create(Viewport1);
+   if Checkbox.Checked then begin
+     Lines[n].Texture:='castle-data:/pen.png';
+     Lines[n].TexCoordMode:=cmLine;
+   end;
+    Lines[n].JoinMode:=jmRound;
     Lines[n].Color:=CurrentColor;
     Lines[n].JoinBeginMode:=bmRound;
     Lines[n].JoinEndMode:=bmRound;
-    Viewport1.Items.Insert(0,Lines[n]);
     Lines[n].Translation :=CurrentPosition;
     Lines[n].Points.Add(Vector2(0,0));
+    Viewport1.Items.Add(Lines[n]);
     IsMotion:=true;
     Exit(true);
   end;

@@ -1464,13 +1464,13 @@
                 },
                 "RotationPersistent" : {
                   "$$ClassName" : "TCastleVector4RotationPersistent",
-                  "W" : 2.7045899629592896E-001,
-                  "Z" : -9.9999493360519409E-001
+                  "W" : 3.1706655025482178E-001,
+                  "Z" : -1.0000033378601074E+000
                 },
                 "TranslationPersistent" : {
                   "$$ClassName" : "TCastleVector3Persistent",
-                  "X" : -1.5244273376464844E+002,
-                  "Y" : 3.3919066190719604E-001
+                  "X" : -1.5344470214843750E+002,
+                  "Y" : -3.2746818065643311E+000
                 },
                 "CountPoints" : 6,
                 "Points0" : {

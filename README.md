@@ -53,6 +53,20 @@ Examples
 
 For examples, see _/CastleLines2D/examples_
 
-![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png)
+![preview1](img/preview1.png) ![preview2](img/preview2.png) ![preview3](img/preview3.png) ![preview4](img/preview4.png)
+
+Change log
+----------
+**12.01.2023**
+
+Added various ways to apply texture to TCastleLine2D, TCastlePolygon2D.
+
+The Shift key now helps to draw straight lines.
+
+In CastlePolygon2D added property - Area
+
+Bugs fixed.
+
+[More details](https://kumurtash.github.io/CastleLines2D-docs/en/index.html#change)
 
 * * *

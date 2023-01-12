@@ -52,7 +52,7 @@
         "Name" : "",
         "Orthographic" : {
           "$$ClassName" : "TCastleOrthographic",
-          "Height" : 1.2000000000000000E+003,
+          "Height" : 3.1631658935546875E+002,
           "OriginPersistent" : {
             "$$ClassName" : "TCastleVector2Persistent",
             "X" : 5.0000000000000000E-001,
@@ -143,6 +143,28 @@
             "$$ClassName" : "TCastleVector2Persistent",
             "X" : 3.0000000000000000E+001,
             "Y" : 9.9000000000000000E+001
+          }
+        },
+        {
+          "$$ClassName" : "TCastleCheckbox",
+          "Caption" : "Texturing",
+          "CheckboxColorPersistent" : {
+            "$$ClassName" : "TCastleColorPersistent",
+            "Blue" : 1.0000000000000000E+000,
+            "Green" : 1.0000000000000000E+000,
+            "Red" : 1.0000000000000000E+000
+          },
+          "Name" : "Checkbox",
+          "TextColorPersistent" : {
+            "$$ClassName" : "TCastleColorPersistent",
+            "Blue" : 1.0000000000000000E+000,
+            "Green" : 1.0000000000000000E+000,
+            "Red" : 1.0000000000000000E+000
+          },
+          "TranslationPersistent" : {
+            "$$ClassName" : "TCastleVector2Persistent",
+            "X" : 3.0000000000000000E+001,
+            "Y" : 1.6800000000000000E+002
           }
         }
       ]

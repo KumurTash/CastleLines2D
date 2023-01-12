@@ -1,0 +1,8 @@
+License (Creative Commons Zero, CC0)
+	http://creativecommons.org/publicdomain/zero/1.0/
+
+SoccerBall.png - https://opengameart.org/content/soccer-ball
+fence.png      - https://opengameart.org/content/bevouliin-free-fence-game-background-for-game-developers
+flag.png       - https://kenney.nl/assets/platformer-pack-medieval
+road.png       - https://kenney.nl/assets/map-pack
+grass.png,grassCenter.png,spikes.png - https://kenney.nl/assets/platformer-pack-redux

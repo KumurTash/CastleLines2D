@@ -60,6 +60,10 @@ type
       isMovePoint:boolean;
       {Линия которую редактирует}
       Line:TCastleLine2DBase;
+      {Нажат ли Шифт}
+      isShift:boolean;
+      ShiftPoint:TVector2;
+
       const
        DistanceToExistGizmo = 1;
       {Берет процент от текущей высоты камеры. Работает только с ортогональной камерой}
@@ -73,8 +77,8 @@ type
       function PointingDeviceMove(const Pick: TRayCollisionNode; const Distance: Single): Boolean;override;
       function PointingDevicePress(const Pick: TRayCollisionNode; const Distance: Single): Boolean; override;
       function PointingDeviceRelease(const Pick: TRayCollisionNode; const Distance: Single; const CancelAction: Boolean): Boolean; override;
-      {Для отслеживания нажатия правой кнопки мыши}
       function Press(const E: TInputPressRelease): boolean; override;
+      function Release(const E: TInputPressRelease): boolean; override;
       constructor Create(AOwner: TComponent); override;
       destructor Destroy; override;
       {* Построить геометрию заново}
@@ -149,6 +153,7 @@ begin
   FInsertPointIndex:=-1;
   FInsertPoint:=TVector2.Zero;
   isMovePoint:=false;
+  isShift:=false;
   Exists:=false;
 
   if Line<>nil then begin
@@ -206,6 +211,7 @@ var Point:TVector3;
 begin
   Result:=inherited;
   if Result then Exit;
+   ShiftPoint:=Vector2(MinSingle,MinSingle);
    if FSelectPoint>=0 then begin
     isMovePoint:=True;
     Result:=True;
@@ -220,6 +226,11 @@ begin
 
 end;
 
+function TCastleLine2DGizmos.Release(const E: TInputPressRelease): boolean;
+begin
+    if E.IsKey(keyShift) then isShift:=false;
+end;
+
 function TCastleLine2DGizmos.Press(const E: TInputPressRelease): boolean;
 {$ifdef CASTLE_DESIGN_MODE}
 var PE:TPointEditor;
@@ -230,6 +241,9 @@ begin
   if E.IsKey(keyEscape) then  begin
    Hide;
    Exit(true);
+  end;
+  if E.IsKey(keyShift) then begin
+   isShift:=true;
   end;
   if E.IsMouseButton(buttonRight)and(FSelectPoint>=0)and(isMovePoint=false)and(Line.Points.Count>2) then begin  // удаление точки
    Line.Points.Delete(FSelectPoint);
@@ -309,8 +323,12 @@ begin
 
    end else begin // Механизм перемещения
     Result:=true;
-    Line.Points[FSelectPoint]:=Point.XY;
-
+    if isShift then begin
+     Writeln(ShiftPoint.ToString);
+     if TVector2.Equals(ShiftPoint,Vector2(MinSingle,MinSingle)) then ShiftPoint:=Line.Points[FSelectPoint] else
+       if Abs(Point.XY.X-ShiftPoint.X)>Abs(Point.XY.Y-ShiftPoint.Y) then Line.Points[FSelectPoint]:=Vector2(Point.XY.X,ShiftPoint.Y)
+       else Line.Points[FSelectPoint]:=Vector2(ShiftPoint.X,Point.XY.Y);
+    end else  Line.Points[FSelectPoint]:=Point.XY;
     Line.ReLoad;
     Reload;
    end;

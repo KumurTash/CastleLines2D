@@ -300,8 +300,14 @@ begin
    if ARow=1 then StringGrid.Cells[ACol,StringGrid.RowCount-1]:=s;
    if ARow=StringGrid.RowCount-1 then StringGrid.Cells[ACol,1]:=s;
   end;
+
+  if (FLine.LineType=ltClose)and(FLine.Points.Count=3) and (TVector2.Equals(FLine.Points[0],FLine.Points[2])) then begin  // что бы избежать ошибок
+   if ACol=1 then StringGrid.Cells[ACol,ARow]:=(FLine.Points[2].X+1).ToString;
+   if ACol=2 then StringGrid.Cells[ACol,ARow]:=(FLine.Points[2].Y+1).ToString;
+  end;
   FLine.ReLoad;
   Line2DGizmos.ReLoad;
+
 end;
 
 procedure TPointsEditor.StringGridPaste(Sender: TObject);
@@ -349,7 +355,9 @@ end;
 
 procedure TPointsEditor.BtnAddClick(Sender: TObject);
 begin
-    FLine.Points.Add(Vector2(0,0));
+    if (FLine.LineType=ltClose)and(FLine.Points.Count=2) and (TVector2.Equals(FLine.Points[0],Vector2(0,0)))
+    then FLine.Points.Add(Vector2(1,1))
+    else FLine.Points.Add(Vector2(0,0));
     FLine.ReLoad;
     Line2DGizmos.ReLoad;
     Reload;
@@ -375,8 +383,8 @@ begin
   if FileExists(SaveDialog.FileName) then begin
    if Application.MessageBox('Would you like to replace the existing file?', 'File already exists...', MB_ICONQUESTION + MB_YESNO)= IDYES then
     FLine.SavePointsToFile(SaveDialog.FileName);
-  end;
-
+  end else
+    FLine.SavePointsToFile(SaveDialog.FileName);
  end;
 end;
 

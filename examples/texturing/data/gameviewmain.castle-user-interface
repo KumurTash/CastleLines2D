@@ -1,0 +1,677 @@
+{
+  "$$ClassName" : "TCastleUserInterface",
+  "FullSize" : true,
+  "Name" : "Group1",
+  "$Children" : [
+    {
+      "$$ClassName" : "TCastleViewport",
+      "BackgroundColorPersistent" : {
+        "$$ClassName" : "TCastleColorPersistent",
+        "Blue" : 2.5000000000000000E-001,
+        "Green" : 2.5000000000000000E-001,
+        "Red" : 2.5000000000000000E-001
+      },
+      "Camera" : "Camera1",
+      "FullSize" : true,
+      "Items" : {
+        "$$ClassName" : "TCastleRootTransform",
+        "PhysicsProperties" : {
+          "$$ClassName" : "TPhysicsProperties",
+          "GravityStrength" : 9.8099998474121094E+001
+        },
+        "$Children" : [
+          {
+            "$$ClassName" : "TCastleCamera",
+            "Name" : "Camera1",
+            "Orthographic" : {
+              "$$ClassName" : "TCastleOrthographic",
+              "Height" : 1.0000000000000000E+003,
+              "OriginPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "X" : 5.0000000000000000E-001,
+                "Y" : 5.0000000000000000E-001
+              }
+            },
+            "Perspective" : {
+              "$$ClassName" : "TCastlePerspective"
+            },
+            "ProjectionType" : "ptOrthographic"
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "JoinBeginMode" : "bmRound",
+            "JoinEndMode" : "bmBottomTriangle",
+            "JoinMode" : "jmRound",
+            "LineWidth" : 7.0000000000000000E+001,
+            "Material" : "pmUnlit",
+            "Name" : "Line2D2",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "TexCoordMode" : "cmLine",
+            "Texture" : "castle-data:/grass.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -7.1405328369140625E+002,
+              "Y" : 4.4656501770019531E+001
+            },
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastleMeshCollider",
+                "Mass" : 1.0000000000000000E+002,
+                "Mesh" : "Line2D2",
+                "Name" : "MeshCollider1"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "LockRotation" : [
+                  0,
+                  1
+                ],
+                "LockTranslation" : [
+                  2
+                ],
+                "Name" : "RigidBody1"
+              }
+            ],
+            "CountPoints" : 7,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -1.3507080078125000E-001,
+              "Y" : 3.3975311279296875E+002
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 8.6312316894531250E+001,
+              "Y" : 1.9689263916015625E+002
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.0033691406250000E+002,
+              "Y" : 1.2202592468261719E+002
+            },
+            "Points3" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.4272344970703125E+002,
+              "Y" : 9.9446174621582031E+001
+            },
+            "Points4" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 2.1966006469726562E+002,
+              "Y" : 1.0184017181396484E+002
+            },
+            "Points5" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 3.3369619750976562E+002,
+              "Y" : 1.1181354522705078E+002
+            },
+            "Points6" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 5.0235949707031250E+002,
+              "Y" : 9.2776252746582031E+001
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "JoinBeginMode" : "bmBottomRound",
+            "JoinEndMode" : "bmBottomTriangle",
+            "JoinMode" : "jmRound",
+            "LineWidth" : 7.0000000000000000E+001,
+            "Material" : "pmUnlit",
+            "Name" : "Line2D3",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderLayer" : "rlFront",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "Z" : 1.0000000000000000E+000
+            },
+            "TexCoordMode" : "cmLine",
+            "Texture" : "castle-data:/grass.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -3.4797848510742188E+002,
+              "Y" : -3.0586822509765625E+002
+            },
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastleMeshCollider",
+                "Mass" : 1.0000000000000000E+002,
+                "Mesh" : "Line2D3",
+                "Name" : "MeshCollider2"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "LockRotation" : [
+                  0,
+                  1
+                ],
+                "LockTranslation" : [
+                  2
+                ],
+                "Name" : "RigidBody2"
+              }
+            ],
+            "CountPoints" : 5,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -9.1387603759765625E+001,
+              "Y" : 3.2052575683593750E+002
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.8007765197753906E+002,
+              "Y" : 2.2783706665039062E+002
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 3.8969155883789062E+002,
+              "Y" : 2.0911795043945312E+002
+            },
+            "Points3" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 5.9090301513671875E+002,
+              "Y" : 1.8444000244140625E+002
+            },
+            "Points4" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 7.2518103027343750E+002,
+              "Y" : 1.8632998657226562E+002
+            }
+          },
+          {
+            "$$ClassName" : "TCastlePolygon2D",
+            "LineType" : "ltClose",
+            "Material" : "pmUnlit",
+            "Name" : "Polygon2D1",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderLayer" : "rlBack",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "Z" : 1.0000000000000000E+000
+            },
+            "TexCoordMode" : "cmRepeat",
+            "Texture" : "castle-data:/grassCenter.png",
+            "TextureScalePersistent" : {
+              "$$ClassName" : "TCastleVector2Persistent",
+              "X" : 1.5000000000000000E+000,
+              "Y" : 1.5000000000000000E+000
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -1.7290994262695312E+002,
+              "Y" : -4.7862942504882812E+002
+            },
+            "CountPoints" : 17,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.1146477050781250E+003,
+              "Y" : -6.6073699951171875E+001
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -7.7860437011718750E+002,
+              "Y" : -7.1183685302734375E+001
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -7.6761120605468750E+002,
+              "Y" : 4.1535003662109375E+001
+            },
+            "Points3" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -5.0582577514648438E+002,
+              "Y" : 1.9617140197753906E+002
+            },
+            "Points4" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.7620617675781250E+002,
+              "Y" : 2.1838609313964844E+002
+            },
+            "Points5" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.1189770507812500E+002,
+              "Y" : 2.2960821533203125E+002
+            },
+            "Points6" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.8008544921875000E+002,
+              "Y" : 2.3282315063476562E+002
+            },
+            "Points7" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.3400476074218750E+002,
+              "Y" : 1.2994531250000000E+002
+            },
+            "Points8" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -1.4968972778320312E+002,
+              "Y" : 1.1977072143554688E+002
+            },
+            "Points9" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -8.0828689575195312E+001,
+              "Y" : 1.2887561035156250E+002
+            },
+            "Points10" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.7908843994140625E+001,
+              "Y" : 1.8159002685546875E+002
+            },
+            "Points11" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 9.0423889160156250E+001,
+              "Y" : 1.9274591064453125E+002
+            },
+            "Points12" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 4.0055688476562500E+002,
+              "Y" : 2.1505761718750000E+002
+            },
+            "Points13" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 5.8987951660156250E+002,
+              "Y" : 2.1395574951171875E+002
+            },
+            "Points14" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 8.0358990478515625E+002,
+              "Y" : 3.0387445068359375E+002
+            },
+            "Points15" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.0910471191406250E+003,
+              "Y" : 4.2171505737304688E+002
+            },
+            "Points16" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.1146477050781250E+003,
+              "Y" : -6.6073699951171875E+001
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "LineWidth" : 1.0000000000000000E+002,
+            "Material" : "pmUnlit",
+            "Name" : "Fence",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "Z" : 1.0000000000000000E+000
+            },
+            "TexCoordMode" : "cmLine",
+            "Texture" : "castle-data:/fence.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -7.2906231689453125E+002,
+              "Y" : -2.3036798095703125E+002
+            },
+            "CountPoints" : 4,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.1300244140625000E+002,
+              "Y" : -1.4797981262207031E+002
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 5.4200622558593750E+001,
+              "Y" : 1.5107849121093750E+001
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 9.8703552246093750E+001,
+              "Y" : 2.8196929931640625E+001
+            },
+            "Points3" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 2.8849539184570312E+002,
+              "Y" : 3.2123657226562500E+001
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "JoinMode" : "jmRound",
+            "JoinRoundPrecision" : 83,
+            "LineWidth" : 7.0000000000000000E+001,
+            "Material" : "pmUnlit",
+            "Name" : "Line2D4",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderLayer" : "rlFront",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "MinificationFilter" : "minFastest"
+            },
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "Z" : 1.0000000000000000E+000
+            },
+            "TexCoordMode" : "cmLine",
+            "Texture" : "castle-data:/onlyGrass.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -1.7828405761718750E+002,
+              "Y" : -5.0533117675781250E+002
+            },
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastleMeshCollider",
+                "Mass" : 1.0000000000000000E+002,
+                "Mesh" : "Line2D4",
+                "Name" : "MeshCollider3"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "LockRotation" : [
+                  0,
+                  1
+                ],
+                "LockTranslation" : [
+                  2
+                ],
+                "Name" : "RigidBody4"
+              }
+            ],
+            "CountPoints" : 16,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -7.3734222412109375E+002,
+              "Y" : 5.0778564453125000E+001
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.6518222045898438E+002,
+              "Y" : 2.1562980651855469E+002
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.1189770507812500E+002,
+              "Y" : 2.2960821533203125E+002
+            },
+            "Points3" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.8868453979492188E+002,
+              "Y" : 2.2719757080078125E+002
+            },
+            "Points4" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.7375311279296875E+002,
+              "Y" : 1.7114880371093750E+002
+            },
+            "Points5" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.4370642089843750E+002,
+              "Y" : 1.3939062500000000E+002
+            },
+            "Points6" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -1.9220156860351562E+002,
+              "Y" : 1.1801123046875000E+002
+            },
+            "Points7" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -1.4121789550781250E+002,
+              "Y" : 1.1838018798828125E+002
+            },
+            "Points8" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -9.1135437011718750E+001,
+              "Y" : 1.2287017822265625E+002
+            },
+            "Points9" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -5.8094604492187500E+001,
+              "Y" : 1.4133422851562500E+002
+            },
+            "Points10" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -2.7508804321289062E+001,
+              "Y" : 1.7878605651855469E+002
+            },
+            "Points11" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 9.0423889160156250E+001,
+              "Y" : 1.9274591064453125E+002
+            },
+            "Points12" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 4.0055688476562500E+002,
+              "Y" : 2.1505761718750000E+002
+            },
+            "Points13" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 5.8987951660156250E+002,
+              "Y" : 2.1395574951171875E+002
+            },
+            "Points14" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 8.0358990478515625E+002,
+              "Y" : 3.0387445068359375E+002
+            },
+            "Points15" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.1000891113281250E+003,
+              "Y" : 4.2174975585937500E+002
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "JoinBeginMode" : "bmBox",
+            "JoinEndMode" : "bmBox",
+            "JoinTexCoordMode" : "jcmStretch",
+            "LineWidth" : 4.0000000000000000E+001,
+            "Material" : "pmUnlit",
+            "Name" : "Flag",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "TexCoordMode" : "cmBeginEndLine",
+            "Texture" : "castle-data:/flag.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : 6.9571990966796875E+002,
+              "Y" : 3.2446163940429688E+002
+            },
+            "CountPoints" : 2,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 3.0000000000000000E+001,
+              "Y" : -1.9319999694824219E+001
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 3.0000000000000000E+001,
+              "Y" : -3.0243939208984375E+002
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "JoinBeginMode" : "bmBox",
+            "JoinEndMode" : "bmBox",
+            "LineWidth" : 1.0000000000000000E+002,
+            "Material" : "pmUnlit",
+            "Name" : "Road",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "TexCoordMode" : "cmBeginEndLine",
+            "Texture" : "castle-data:/road.png",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -2.0383657836914062E+002,
+              "Y" : 4.0079431152343750E+002
+            },
+            "CountPoints" : 3,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 8.7801477050781250E+002,
+              "Y" : 2.0000000000000000E+001
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.0100000000000000E+003,
+              "Y" : 2.0000000000000000E+001
+            },
+            "Points2" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : 1.0100000000000000E+003,
+              "Y" : -1.1424688720703125E+002
+            }
+          },
+          {
+            "$$ClassName" : "TCastleLine2D",
+            "LineWidth" : 7.0000000000000000E+001,
+            "Material" : "pmUnlit",
+            "Name" : "Spikes",
+            "Points" : {
+              "$$ClassName" : "TVector2List"
+            },
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "TexCoordMode" : "cmLine",
+            "Texture" : "castle-data:/spikes.png",
+            "CountPoints" : 2,
+            "Points0" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -4.4793646240234375E+002,
+              "Y" : 8.8052444458007812E+001
+            },
+            "Points1" : {
+              "$$ClassName" : "TCastleVector2PersistentSimple",
+              "X" : -1.8226583862304688E+002,
+              "Y" : -1.1727828979492187E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastleImageTransform",
+            "Name" : "Ball",
+            "ScalePersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : 5.0000000000000000E-001,
+              "Y" : 5.0000000000000000E-001,
+              "Z" : 5.0000000000000000E-001
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -6.7158294677734375E+002,
+              "Y" : 5.6894903564453125E+002
+            },
+            "Url" : "castle-data:/SoccerBall.png",
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastleSphereCollider",
+                "Mode2D" : true,
+                "Name" : "SphereCollider1"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "LinearVelocityPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "Y" : -5.0000000000000000E+002
+                },
+                "LockRotation" : [
+                  0,
+                  1
+                ],
+                "LockTranslation" : [
+                  2
+                ],
+                "Name" : "RigidBody3"
+              }
+            ]
+          }
+        ]
+      },
+      "Name" : "Viewport1",
+      "InternalDesignCamera" : {
+        "$$ClassName" : "TCastleCamera",
+        "Name" : "",
+        "Orthographic" : {
+          "$$ClassName" : "TCastleOrthographic",
+          "Height" : 1.2433950195312500E+003,
+          "OriginPersistent" : {
+            "$$ClassName" : "TCastleVector2Persistent",
+            "X" : 5.0000000000000000E-001,
+            "Y" : 5.0000000000000000E-001
+          }
+        },
+        "Perspective" : {
+          "$$ClassName" : "TCastlePerspective"
+        },
+        "ProjectionType" : "ptOrthographic",
+        "RotationPersistent" : {
+          "$$ClassName" : "TCastleVector4RotationPersistent",
+          "Z" : 1.0000000000000000E+000
+        },
+        "TranslationPersistent" : {
+          "$$ClassName" : "TCastleVector3Persistent",
+          "X" : -1.7224053955078125E+002,
+          "Y" : -7.5861312866210938E+001,
+          "Z" : 2.0333052978515625E+003
+        }
+      },
+      "InternalDesignNavigationType" : 2,
+      "InternalDesignNavigations[dnFly]" : {
+        "$$ClassName" : "TCastleWalkNavigationDesign",
+        "Exists" : false,
+        "Name" : ""
+      },
+      "InternalDesignNavigations[dnExamine]" : {
+        "$$ClassName" : "TCastleExamineNavigationDesign",
+        "Exists" : false,
+        "Name" : ""
+      },
+      "InternalDesignNavigations[dn2D]" : {
+        "$$ClassName" : "TCastle2DNavigationDesign",
+        "Name" : ""
+      }
+    },
+    {
+      "$$ClassName" : "TCastleLabel",
+      "ColorPersistent" : {
+        "$$ClassName" : "TCastleColorPersistent",
+        "Green" : 1.0000000000000000E+000,
+        "Red" : 1.0000000000000000E+000
+      },
+      "FontSize" : 2.0000000000000000E+001,
+      "HorizontalAnchorParent" : "hpRight",
+      "HorizontalAnchorSelf" : "hpRight",
+      "Name" : "LabelFps",
+      "Text" : [
+        "FPS: xxx"
+      ],
+      "TranslationPersistent" : {
+        "$$ClassName" : "TCastleVector2Persistent",
+        "X" : -2.0000000000000000E+001,
+        "Y" : -2.0000000000000000E+001
+      },
+      "VerticalAnchorParent" : "vpTop",
+      "VerticalAnchorSelf" : "vpTop"
+    }
+  ]
+}
