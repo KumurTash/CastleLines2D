@@ -26,12 +26,12 @@ Detailed usage instructions:
 1.  Get TCastleLine2D code.
 2.  Point your project to `TCastleLine2D` sources. E.g. add this to `CastleEngineManifest.xml:`
     
-            <compiler\_options>
-              <search\_paths>
+            <compiler_options>
+              <search_paths>
                 <path value="code/" />
                 <path value="../../../CastleLines2D/src/" />
-              </search\_paths>
-            </compiler\_options>
+              </search_paths>
+            </compiler_options>
           
     
 3.  Add to `CastleEngineManifest.xml` the line `editor_units="CastleLine2D,CastlePolygon2D"`.  
