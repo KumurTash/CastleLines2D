@@ -27,12 +27,12 @@ TCastlePolygon2D - потенциально невыпуклый многоуг�
 1.  Скачайте код TCastleLine2D.
 2.  Укажите исходный код `TCastleLine2D` в параметрах вашего проекта. Например добавьте это в `CastleEngineManifest.xml:`
 
-            <compiler\_options>
-              <search\_paths>
+            <compiler_options>
+              <search_paths>
                 <path value="code/" />
                 <path value="../../../CastleLines2D/src/" />
-              </search\_paths>
-            </compiler\_options>
+              </search_paths>
+            </compiler_options>
 
 
 3.  Также добавьте в `CastleEngineManifest.xml` строку `editor_units="CastleLine2D,CastlePolygon2D"`.
