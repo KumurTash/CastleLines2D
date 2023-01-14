@@ -100,6 +100,7 @@ type
       procedure SetBeginMode(mode:TBeginEndMode);
       procedure SetEndMode(mode:TBeginEndMode);
       procedure SetLineWidth(wl:Single);
+      class procedure CreateInitialPoints(Sender: TObject);
     protected
       {*
         Коэффициент для правильного наложения текстуры.
@@ -171,6 +172,17 @@ implementation
 
 uses SysUtils,CastleComponentSerialize;
 
+class procedure TCastleLine2D.CreateInitialPoints(Sender: TObject);
+var
+   P:TCastleLine2D;
+begin
+ P := Sender as TCastleLine2D;
+ P.Points.Add(Vector2(-50,-50));
+ P.Points.Add(Vector2(50,50));
+ P.ReLoad;
+
+end;
+
 constructor TCastleLine2D.Create(AOwner: TComponent);
 begin
   inherited;
@@ -191,13 +203,6 @@ begin
 
   FGeometry.Coord:=FCoordinate;
   ShapeNode.Geometry:=FGeometry;
-
-  {$ifdef CASTLE_DESIGN_MODE}
-   Points.Add(Vector2(-50,-50));
-   Points.Add(Vector2(50,50));
-   ReLoad;
-  {$endif}
-
 end;
 
 destructor TCastleLine2D.Destroy;
@@ -676,9 +681,15 @@ begin
 end;
 
 
+var
+  R: TRegisteredComponent;
 
 initialization
 
-RegisterSerializableComponent(TCastleLine2D, 'Line2D Transform');
+R := TRegisteredComponent.Create;
+R.ComponentClass := TCastleLine2D;
+R.Caption := ['Line2D Transform'];
+R.OnCreate := {$ifdef FPC}@{$endif}TCastleLine2D.CreateInitialPoints;
+RegisterSerializableComponent(R);
 
 end.

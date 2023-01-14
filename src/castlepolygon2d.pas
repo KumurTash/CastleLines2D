@@ -56,6 +56,7 @@ type
      procedure SetTextureScale(const AValue: TVector2);
      function  GetTextureScalePersistent:TVector2;
      procedure SetTextureScalePersistent(const AValue: TVector2);
+     class procedure CreateInitialPoints(Sender: TObject);
    protected
      {*Для определения нужно ли перестраивать сцену при изменении Scale}
      procedure ChangedTransform; override;
@@ -105,6 +106,25 @@ uses
   {$endif}
   SysUtils,CastleComponentSerialize;
 
+class procedure TCastlePolygon2D.CreateInitialPoints(Sender: TObject);
+var
+   P:TCastlePolygon2D;
+begin
+ P := Sender as TCastlePolygon2D;
+ P.Points.Add(Vector2(0,80));
+ P.Points.Add(Vector2(25,35));
+ P.Points.Add(Vector2(75,25));
+ P.Points.Add(Vector2(40,-10));
+ P.Points.Add(Vector2(50,-60));
+ P.Points.Add(Vector2(0,-40));
+ P.Points.Add(Vector2(-50,-60));
+ P.Points.Add(Vector2(-40,-10));
+ P.Points.Add(Vector2(-75,25));
+ P.Points.Add(Vector2(-25,35));
+ P.Points.Add(Vector2(0,80));
+ P.ReLoad;
+end;
+
 constructor TCastlePolygon2D.Create(AOwner: TComponent);
 begin
   inherited;
@@ -124,21 +144,6 @@ begin
   FTextureScalePersistent.InternalGetValue := {$ifdef FPC}@{$endif} GetTextureScalePersistent;
   FTextureScalePersistent.InternalSetValue := {$ifdef FPC}@{$endif} SetTextureScalePersistent;
   FTextureScalePersistent.InternalDefaultValue := FTextureScale;
-
-  {$ifdef CASTLE_DESIGN_MODE}
-  Points.Add(Vector2(0,80));
-  Points.Add(Vector2(25,35));
-  Points.Add(Vector2(75,25));
-  Points.Add(Vector2(40,-10));
-  Points.Add(Vector2(50,-60));
-  Points.Add(Vector2(0,-40));
-  Points.Add(Vector2(-50,-60));
-  Points.Add(Vector2(-40,-10));
-  Points.Add(Vector2(-75,25));
-  Points.Add(Vector2(-25,35));
-  Points.Add(Vector2(0,80));
-  ReLoad;
-  {$endif}
 end;
 
 destructor TCastlePolygon2D.Destroy;
@@ -289,12 +294,22 @@ begin
  inherited SetLineType(ltClose);
 end;
 
+
+
+var
+  R: TRegisteredComponent;
 initialization
 
-RegisterSerializableComponent(TCastlePolygon2D, 'Polygon2D Transform');
+R := TRegisteredComponent.Create;
+R.ComponentClass := TCastlePolygon2D;
+R.Caption := ['Polygon2D Transform'];
+R.OnCreate := {$ifdef FPC}@{$endif}TCastlePolygon2D.CreateInitialPoints;
+RegisterSerializableComponent(R);
 {$ifdef CASTLE_DESIGN_MODE}
 RegisterPropertyEditor(TypeInfo(TCastleLineType), TCastlePolygon2D, 'LineType', THiddenPropertyEditor);
 {$endif}
+
+
 
 
 end.
