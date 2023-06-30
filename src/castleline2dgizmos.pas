@@ -114,7 +114,6 @@ constructor TCastleLine2DGizmos.Create(AOwner: TComponent);
 begin
   inherited;
   Line:=nil;
-  Setup2D;
   Self.SetTransient;
   Hide;
 
@@ -129,7 +128,6 @@ begin
   Collides := false;
   Pickable := true;
   CastShadows := false;
-  ExcludeFromStatistics := true;
   InternalExcludeFromParentBoundingVolume := true;
 
 
