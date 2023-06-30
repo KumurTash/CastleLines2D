@@ -228,7 +228,10 @@ end;
 
 function TCastleLine2DGizmos.Release(const E: TInputPressRelease): boolean;
 begin
-    if E.IsKey(keyShift) then isShift:=false;
+  Result:=inherited;
+  if Result then Exit;
+
+  if E.IsKey(keyShift) then isShift:=false;
 end;
 
 function TCastleLine2DGizmos.Press(const E: TInputPressRelease): boolean;
