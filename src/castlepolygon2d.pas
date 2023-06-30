@@ -160,7 +160,7 @@ end;
 
 procedure TCastlePolygon2D.ReLoad;
 var
-  Indexes:TLongIntList;    // для добавления в FGeometry
+  Indexes:TInt32List;    // для добавления в FGeometry
   List3:TVector3List;      // для добавления в FGeometry
   TexCoord:TVector2List;   // текстурные координаты
   i:integer;
@@ -171,7 +171,7 @@ begin
    Exit;
   end;
   List3:=TVector3List.Create;
-  Indexes:=TLongIntList.Create;
+  Indexes:=TInt32List.Create;
   if (Self.Texture<>'')and(FTexCoordMode<>cmDefault) then begin
     TexCoord:=TVector2List.Create;
   end;
