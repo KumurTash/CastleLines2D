@@ -370,28 +370,34 @@ var
   GPoints:TPolypoint2DNode;
   ShapePoints:TShapeNode;
   MaterialPoints:TMaterialNode;
+  AppearancePoints:TAppearanceNode;
   {Точка для вставки}
   GInsertPoint:TPolypoint2DNode;
   ShapeInsertPoint:TShapeNode;
   MaterialInsertPoint:TMaterialNode;
+  AppearanceInsertPoint:TAppearanceNode;
   {Выделенная точка}
   GSelectPoint:TPolypoint2DNode;
   ShapeSelectPoint:TShapeNode;
   MaterialSelectPoint:TMaterialNode;
+  AppearanceSelectPoint:TAppearanceNode;
   {Линии }
   GLines:TPolyline2DNode;
   ShapeLines:TShapeNode;
   MaterialLines:TMaterialNode;
+  AppearanceLines:TAppearanceNode;
   {Граница, в которой можно редактировать}
   GBorder:TPolyline2DNode;
   ShapeBorder:TShapeNode;
   MaterialBorder:TMaterialNode;
+  AppearanceBorder:TAppearanceNode;
   {Текст для обозначения номеров вершин}
   TextTransform:TTransformNode;
   GText:TTextNode;
   ShapeText:TShapeNode;
   Font:TFontStyleNode;
   MaterialText:TMaterialNode;
+  AppearanceText:TAppearanceNode;
 
   i:integer;
   MaxXY,MinXY:TVector2;
@@ -422,7 +428,9 @@ begin
   GBorder.SetLineSegments([MinXY,Vector2(MinXY.X,MaxXY.Y),MaxXY,Vector2(MaxXY.X,MinXY.Y),MinXY]);
   MaterialBorder:=TMaterialNode.Create;
   MaterialBorder.EmissiveColor := RedRGB;
-  ShapeBorder.Material := MaterialBorder;
+  AppearanceBorder := TAppearanceNode.Create;
+  AppearanceBorder.Material := MaterialBorder;
+  ShapeBorder.Appearance := AppearanceBorder;
 
 
   //линии
@@ -430,27 +438,35 @@ begin
   GLines.SetLineSegments(Line.Points);
   MaterialLines := TMaterialNode.Create;
   MaterialLines.EmissiveColor := RedRGB;
-  ShapeLines.Material := MaterialLines;
+  AppearanceLines := TAppearanceNode.Create;
+  AppearanceLines.Material := MaterialLines;
+  ShapeLines.Appearance := AppearanceLines;
   // точки вершин
   GPoints:=TPolypoint2DNode.CreateWithShape(ShapePoints);
   GPoints.SetPoint(Line.Points);
   MaterialPoints := TMaterialNode.Create;
   MaterialPoints.EmissiveColor := RedRGB;
-  ShapePoints.Material := MaterialPoints;
+  AppearancePoints := TAppearanceNode.Create;
+  AppearancePoints.Material := MaterialPoints;
+  ShapePoints.Appearance := AppearancePoints;
   // выделенная точка
   if FSelectPoint>=0 then begin;
    GSelectPoint:=TPolypoint2DNode.CreateWithShape(ShapeSelectPoint);
    GSelectPoint.SetPoint(Line.Points[FSelectPoint]);
    MaterialSelectPoint:=TMaterialNode.Create;
    MaterialSelectPoint.EmissiveColor := GrayRGB;
-   ShapeSelectPoint.Material:=MaterialSelectPoint;
+   AppearanceSelectPoint := TAppearanceNode.Create;
+   AppearanceSelectPoint.Material := MaterialSelectPoint;
+   ShapeSelectPoint.Appearance := AppearanceSelectPoint;
    TransformNode.AddChildren(ShapeSelectPoint);
    // текст
    if World.MainCamera.ProjectionType=ptOrthographic then begin
     GText:=TTextNode.CreateWithTransform(ShapeText,TextTransform);
     MaterialText:=TMaterialNode.Create;
     MaterialText.EmissiveColor := RedRGB;
-    ShapeText.Material:=MaterialText;
+    AppearanceText := TAppearanceNode.Create;
+    AppearanceText.Material := MaterialText;
+    ShapeText.Appearance := AppearanceText;
     GText.SetText([FSelectPoint.ToString]);
     Font:=TFontStyleNode.Create;
     Font.Size:=FONT_SIZE;
@@ -467,7 +483,9 @@ begin
    GInsertPoint.SetPoint(FInsertPoint);
    MaterialInsertPoint:=TMaterialNode.Create;
    MaterialInsertPoint.EmissiveColor := BlueRGB;
-   ShapeInsertPoint.Material:=MaterialInsertPoint;
+   AppearanceInsertPoint := TAppearanceNode.Create;
+   AppearanceInsertPoint.Material := MaterialInsertPoint;
+   ShapeInsertPoint.Appearance := AppearanceInsertPoint;
    TransformNode.AddChildren(ShapeInsertPoint);
   end;
 
