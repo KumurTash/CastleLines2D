@@ -222,7 +222,7 @@ var
     ResultCoord:TVector2List;// Для сборки всех элементов линии попорядку
     List3:TVector3List;      // для добавления в FGeometry
     isCross:boolean;         // для построени я трапеций. есть ли пересечения прямоугольников
-    Indexes:TLongIntList;    // для добавления в FGeometry
+    Indexes:TInt32List;    // для добавления в FGeometry
     // для текстурных координат
     CurTex:single; // текущее положение текстурных координат по оси X
     len:single;
@@ -255,7 +255,7 @@ begin
    BeginEnds:=TVector2List.Create;
    Triangles:=TVector2List.Create;
    List3:=TVector3List.Create;
-   Indexes:=TLongIntList.Create;
+   Indexes:=TInt32List.Create;
    Joins:=TVector2List.Create;
    // для текстурных координат
    if (Self.Texture<>'')and(FTexCoordMode<>cmDefault) then begin
